@@ -3,6 +3,15 @@
 
 The http_ext plugin collects data from HTTP URLs which respond with JSON and XML. In compare to httpjson it not flattens the metrics and allows to define fields in the string format that are to be treated as numerical float, int or bool.
 
+### Install Instructions 
+
+To integrate with telegraf, extend the telegraf.conf using the following example
+```
+[[inputs.execd]]
+   command = ["/path/to/http_ext-telegraf-plugin", "-config", "/path/to/http_ext-telegraf-plugin.config"]
+   signal = "STDIN"
+```
+
 ### Configuration:
 
 ```toml
